@@ -115,4 +115,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "account.authentication.EmailAuthBackend",
+    "social_core.backends.google.GoogleOAuth2",
 ]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "386444837145-6h4m1u5qiotp209t06latbctksbbpe74.apps.googleusercontent.com"  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = (
+    "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"  # Google Consumer Secret
+)
