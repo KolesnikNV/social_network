@@ -4,7 +4,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# .env in social_network/bookmarks/bookmarks/.env/
+# .env in social_network/bookmarks/.env/
 SECRET_KEY = str(os.getenv("DJANGO_SECRET_KEY"))
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
