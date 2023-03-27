@@ -4,22 +4,17 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-wsf4s*pxr*53si172ej1)_5t+&n7wp6h5i2jy%m4g(f5&l3gsx"
+# .env in social_network/bookmarks/bookmarks/.env/
+SECRET_KEY = str(os.getenv("DJANGO_SECRET_KEY"))
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["mysite.com", "localhost", "127.0.0.1"]
 
 LOGIN_REDIRECT_URL = "dashboard"
 LOGIN_URL = "login"
 LOGOUT_URL = "logout"
-# Application definition
 
 INSTALLED_APPS = [
     "account.apps.AccountConfig",
@@ -29,6 +24,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "social_django",
 ]
 
 MIDDLEWARE = [
